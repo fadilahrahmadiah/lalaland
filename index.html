@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>beauté</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="nav-left">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="#">SHOP</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                </ul>
+            </div>
+            <div class="nav-center">
+                <h1>beauté</h1>
+            </div>
+            <div class="nav-right">
+                <ul>
+                    <li><a href="#">SEARCH</a></li>
+                    <li><a href="account.html">ACCOUNT</a></li>
+                    <li><a href="#">CART</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <br><br><br><br>
+
+    <div class="video-container">
+        <video loop autoplay muted playsinline>
+            <source src="MP4_VLOG.mp4" type="video/mp4" />
+        </video>
+    </div>
+    <div class="auth-container">
+        <div class="auth-form-container">
+            <h2>Login</h2>
+            <form id="loginForm" action="login.php" method="POST">
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="javascript:void(0)" onclick="showRegisterForm()">Register here</a></p>
+        </div>
+
+        <div class="auth-form-container" id="registerForm" style="display:none;">
+            <h2>Register</h2>
+            <form action="register.php" method="POST">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Register</button>
+            </form>
+            <p>Already have an account? <a href="javascript:void(0)" onclick="showLoginForm()">Login here</a></p>
+        </div>
+    </div>
+
+    <div id="mainContent" style="display: none;">
+        <h2>Welcome back!</h2>
+        <p>Enjoy browsing the site!</p>
+    </div>
+
+    <P class="products">
+        our products
+    </P>
+    <main class="main2">
+        <section class="content">
+            <button class="scroll-left"> &lt; </button> <!-- Tombol geser kiri -->
+            <div class="cards-container">
+                <div class="card tint">
+                    <h2>Tint</h2>
+                    <button class="readmore">Read More ..</button>
+                </div>
+                <div class="card blush">
+                    <h2>Blush</h2>
+                    <button class="readmore">Read More ..</button>
+                </div>
+                <div class="card cleanser">
+                    <h2>Cleanser</h2>
+                    <button class="readmore">Read More ..</button>
+                </div>
+            </div>
+            <button class="scroll-right"> &gt; </button> <!-- Tombol geser kanan -->
+        </section>
+    </main>
+
+    <br>
+
+    <imagee>
+        <div class="container">
+            <p class="haha">one of everything really good</p>
+            <p class="huhu">
+                At beauté, our beauty philosophy is to make one of everything really good. To us, that means a
+                collection of intentional, high-performance essentials you reach for on a daily basis. The ones you
+                love, rely on, and always come back to.
+            </p>
+        </div>
+    </imagee>
+
+    <main class="main2">
+        <section class="content">
+            <div class="card tint">
+                <h2>Tint</h2>
+                <button class="readmore">Read More ..</button>
+            </div>
+            <div class="card blush">
+                <h2>Blush</h2>
+                <button class="readmore">Read More ..</button>
+            </div>
+            <div class="card cleanser">
+                <h2>Cleanser</h2>
+                <button class="readmore">Read More ..</button>
+            </div>
+        </section>
+    </main>
+
+
+
+    <footer>
+        <p>Copyright by Fadilah Rahmadiah 2024</p>
+    </footer>
+
+    <script>
+        // Fungsi untuk menampilkan form registrasi
+        function showRegisterForm() {
+            document.querySelector("#registerForm").style.display = 'block';
+            document.querySelector(".auth-form-container").style.display = 'none';
+        }
+
+        // Fungsi untuk menampilkan form login
+        function showLoginForm() {
+            document.querySelector("#registerForm").style.display = 'none';
+            document.querySelector(".auth-form-container").style.display = 'block';
+        }
+
+        // Fungsi untuk menyembunyikan form login/register
+        function hideAuthForms() {
+            document.querySelector(".auth-container").style.display = 'none';  // Menyembunyikan form login/register
+        }
+
+        // Fungsi ini akan dipanggil setelah login berhasil
+        function onLoginSuccess() {
+            hideAuthForms();  // Menyembunyikan form login/register
+            document.getElementById("mainContent").style.display = "block";  // Menampilkan konten utama
+        }
+
+        // Simulasikan login sukses (panggil fungsi ini setelah login berhasil)
+        // Kamu bisa menghubungkan ini dengan server response jika memakai backend.
+        document.querySelector("#loginForm").addEventListener("submit", function (event) {
+            event.preventDefault();  // Mencegah form submit default
+            // Simulasi login sukses (ganti dengan validasi server yang sesuai)
+            onLoginSuccess();
+        });
+    </script>
+
+</body>
+
+</html>
